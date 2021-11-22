@@ -2,7 +2,7 @@ module.exports = {
   webpack: (config, env) => {
     config.entry = {
       main: "./src/index.js",
-      load: "./public/load-micro-frontend.js",
+      load: "./src/load-micro-frontend.js",
     };
     config.optimization.runtimeChunk = false;
     config.optimization.splitChunks = {

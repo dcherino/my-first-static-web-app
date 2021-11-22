@@ -1,9 +1,9 @@
 const microURL = "https://calm-pond-05e0f7e03.azurestaticapps.net/";
 
 function loadURL() {
-  //   console.log(process.env.NODE_ENV);
-  //   const host =
-  //     process.env.NODE_ENV === "development" ? "http://localhost:3000" : microURL;
+  console.log(process.env.NODE_ENV);
+  const host =
+    process.env.NODE_ENV === "development" ? "http://localhost:3000" : microURL;
 
   const scriptId = `micro-frontend-script`;
 
@@ -15,7 +15,7 @@ function loadURL() {
     renderScript();
     return;
   }
-  const host = "http://localhost:3000";
+
   fetch(`${host}/asset-manifest.json`)
     .then((res) => res.json())
     .then((manifest) => {
@@ -27,7 +27,6 @@ function loadURL() {
       script.onload = () => {
         renderScript();
       };
-      
     });
 }
 
