@@ -16,7 +16,7 @@ function loadURL() {
     return;
   }
 
-  fetch(`${host}/asset-manifest.json`)
+  fetch(`${host}/asset-manifest.json`, { cache: "force-cache" })
     .then((res) => res.json())
     .then((manifest) => {
       const script = document.createElement("script");
